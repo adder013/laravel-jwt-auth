@@ -12,15 +12,3 @@ use App\Http\Controllers\AuthController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group([
-    'middleware' => 'api',
-    'prefix' => 'auth'
-], function ($router) {
-    Route::post('/login', [AuthController::class, 'jwtLogin']);
-    Route::post('/register', [AuthController::class, 'jwtRegister'])->name('jwtRegister');;
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::post('/refresh', [AuthController::class, 'refresh']);
-    Route::get('/user-profile', [AuthController::class, 'userProfile']);    
-});
-Route::get('login', [AuthController::class, 'login'])->name('login');
-Route::get('register', [AuthController::class, 'register'])->name('register');
