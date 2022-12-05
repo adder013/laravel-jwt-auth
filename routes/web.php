@@ -19,7 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group([
-    'middleware' => 'api',
     'prefix' => 'auth'
 ], function ($router) {
     Route::post('/login', [AuthController::class, 'jwtLogin']);
